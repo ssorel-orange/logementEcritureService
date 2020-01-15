@@ -11,7 +11,7 @@ pipeline {
                 step ([$class: 'CopyArtifact', projectName: 'LogementEcritureService_build', filter: 'target/logement_ecriture*.jar']);
                 sh "pwd"
                 sh "ls -a"
-                sh "docker build ./ -t logement_ecriture:${env.BUILD_ID}"
+                sh "docker build ./ -t logement_ecriture_service:${env.BUILD_ID}"
             }
             
         }
