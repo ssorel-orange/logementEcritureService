@@ -23,7 +23,7 @@ public class LogementService {
 	}
 	
 	public Logement saveLogement (Logement logementToSave) {
-		return mongoLogementRepo.insert(logementToSave);
+		return mongoLogementRepo.save(logementToSave);
 	}
 	
 	public Logement updateLogement (Logement logementToSave) {
