@@ -36,14 +36,14 @@ public class LogementServiceController {
 	
 	
 	@PutMapping(value = "/logement/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Logement updateLogement (@PathVariable Integer id,@RequestBody Logement logement) {
+	public Logement updateLogement (@PathVariable String id,@RequestBody Logement logement) {
 		logement.setIdLogement(id);
 		return logementService.saveLogement(logement);
 	
 	}
 	
 	@DeleteMapping(value = "/logement/{id}", produces = MediaType.APPLICATION_JSON_VALUE) 
-	public String deleteLogement (@PathVariable Integer id) {
+	public String deleteLogement (@PathVariable String id) {
 		Logement logement = new Logement();
 		logement.setIdLogement(id);
 		logementService.deleteLogement(logement);
