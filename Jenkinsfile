@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Package Application'){
            steps {
-                step ([$class: 'CopyArtifact', projectName: 'LogementService_build', filter: 'target/logement_ecriture*.jar']);
+                step ([$class: 'CopyArtifact', projectName: 'LogementEcritureService_build', filter: 'target/logement_ecriture*.jar']);
                 sh "pwd"
                 sh "ls -a"
                 sh "docker build ./ -t logement_ecriture:${env.BUILD_ID}"
